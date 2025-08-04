@@ -1,68 +1,179 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6M0VENYB0Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neel0210 - Glass Effect Demo</title>
 
-  gtag('config', 'G-6M0VENYB0Y');
-</script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Neel0210</title>
-    <link rel="icon" type="image/jpeg" sizes="640x640" href="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5">
-    <link rel="icon" type="image/jpeg" sizes="640x640" href="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5">
-    <link rel="icon" type="image/jpeg" sizes="640x640" href="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5">
-    <link rel="icon" type="image/jpeg" sizes="640x640" href="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5">
-    <link rel="icon" type="image/jpeg" sizes="640x640" href="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=815797bb9644aa219c4798c1e4c217a8">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css?h=9db842b3dc3336737559eb4abc0f1b3d">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css?h=9db842b3dc3336737559eb4abc0f1b3d">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css?h=9db842b3dc3336737559eb4abc0f1b3d">
-    <link rel="stylesheet" href="assets/css/styles.min.css?h=5bdcb9f0b3025948d04edc16838b30cb">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M0VENYB0Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6M0VENYB0Y');
+  </script>
+
+  <!-- FontAwesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <style>
+    /* CSS Variables for light and dark glass */
+    :root {
+      --glass-bg-light: rgba(255, 255, 255, 0.15);
+      --glass-border-light: rgba(255, 255, 255, 0.3);
+      --glass-shadow-light: rgba(31, 38, 135, 0.1);
+      --text-color-light: #000;
+
+      --glass-bg-dark: rgba(32, 32, 32, 0.35);
+      --glass-border-dark: rgba(255, 255, 255, 0.1);
+      --glass-shadow-dark: rgba(0, 0, 0, 0.7);
+      --text-color-dark: #fff;
+    }
+
+    /* Base Reset and Fonts */
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000; /* dark background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Glass container */
+    .glass {
+      background: var(--glass-bg-dark);
+      border: 1px solid var(--glass-border-dark);
+      box-shadow: 0 8px 32px 0 var(--glass-shadow-dark);
+      color: var(--text-color-dark);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: 2rem 3rem;
+      max-width: 520px;
+      width: 90%;
+      text-align: center;
+      transition: background 0.3s ease, color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Light mode overrides */
+    @media (prefers-color-scheme: light) {
+      body {
+        background: #f0f0f0;
+      }
+      .glass {
+        background: var(--glass-bg-light);
+        border: 1px solid var(--glass-border-light);
+        box-shadow: 0 8px 32px 0 var(--glass-shadow-light);
+        color: var(--text-color-light);
+      }
+    }
+
+    /* Profile Image */
+    .glass img {
+      height: 230px;
+      width: 230px;
+      border-radius: 50%;
+      border: 20px solid #545454;
+      object-fit: cover;
+      margin-bottom: 2rem;
+    }
+
+    /* Headline */
+    .glass h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Quote styling */
+    .glass .lead {
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+    }
+    .glass .quote-author {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      text-align: right;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* Button styling */
+    .btn-download {
+      background: rgba(24, 24, 24, 0.6);
+      border: none;
+      color: inherit;
+      border-radius: 7px;
+      padding: 10px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      user-select: none;
+    }
+    .btn-download:hover {
+      background-color: #fff;
+      color: #181818;
+    }
+
+    /* Icon links container */
+    .icon-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* Icon styling */
+    .icon-links a {
+      background: rgba(24, 24, 24, 0.6);
+      border-radius: 11px;
+      padding: 12px;
+      font-size: 28px;
+      color: inherit;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+    .icon-links a:hover {
+      background-color: #fff;
+      color: #181818;
+    }
+
+  </style>
 </head>
+<body>
+  <div class="glass">
+    <img src="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5" alt="Profile Picture" />
+    <h1>Neel0210</h1>
+    <p class="lead" id="quote">“It’s not whether you get knocked down, it’s whether you get up.”</p>
+    <p class="quote-author">- Vince Lombardi</p>
+    <a href="download.html" class="btn-download" role="button">DOWNLOADS</a>
+    <div class="icon-links" aria-label="Social media links">
+      <a href="https://github.com/neel0210" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      <a href="https://t.me/Neel0210" aria-label="Telegram" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.instagram.com/neel_0210/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/neel_0210" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+      <a href="https://forum.xda-developers.com/m/neel0210.9821139/" aria-label="XDA Developers Forum" target="_blank" rel="noopener noreferrer"><i class="fas fa-laptop-code"></i></a>
+    </div>
+  </div>
 
-<body style="background: rgb(0,0,0);">
-    <div class="row" style="height: 100%;width: 100%;margin-top: 8%;margin-right: 0px;margin-left: 0px;margin-bottom: 5%;">
-        <div class="col text-center" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle img-fluid" src="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5" style="height: 230px;border: 20px solid #545454 ;"><script>
-window.addEventListener('DOMContentLoaded', (event) => {
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-document.getElementById("quote").style.textAlign = "justify";
-}else{
-document.getElementById("quote").style.textAlign = "center";
-}});
-</script>
-            <h1 style="margin-top: 50px;color: #ffffff;font-family: Conv_std;font-size: 35px;">Neel0210<br></h1>
-            <div style="margin-right: 10%;margin-left: 10%;">
-                <p class="lead text-center" id="quote" style="color: #ffffff;font-family: Conv_std-book;font-size: 22px;">“It’s not whether you get knocked down, it’s whether you get up.”<br></p>
-                <p class="text-right" style="color: #ffffff;font-family: Conv_std-book;font-size: 22px;text-align-last: right;">-Vince Lombardi<br></p>
-                <div style="margin-bottom: 21px;">
-                    <!-- Start: delclass_button --><a class="btn text-capitalize shadow-none" role="button" style="color: #ffffff;background: #181818;border-color: #000000;border-radius: 7px;font-family: Conv_std-book;padding-top: 7px;padding-bottom: 7px;padding-right: 3%;padding-left: 3%;margin-bottom: 5px;" href="download.html" onmouseover="bigImg(this)" onmouseout="normalImg(this)">DOWNLOADS</a><!-- End: delclass_button -->
-                </div><a href="https://github.com/neel0210"><i class="fa fa-github" data-bs-hover-animate="pulse" id="charging" style="color: rgb(255,255,255);font-size: 28px;background: #181818;border-radius: 11px;padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px;margin-right: 10px;" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></i></a><a href="https://t.me/Neel0210"><i class="fa fa-telegram" data-bs-hover-animate="pulse" style="color: rgb(255,255,255);font-size: 28px;background: #181818;border-radius: 11px;padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px;margin-right: 10px;" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></i></a><a href="https://www.instagram.com/neel_0210/"><i class="fab fa-instagram" data-bs-hover-animate="pulse" style="color: rgb(255,255,255);font-size: 28px;background: #181818;border-radius: 11px;padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px;margin-right: 10px;" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></i></a><a href="https://twitter.com/neel_0210"><i class="fa fa-twitter" data-bs-hover-animate="pulse" style="color: rgb(255,255,255);font-size: 28px;background: #181818;border-radius: 11px;padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px;margin-right: 10px;" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></i></a><a href="https://forum.xda-developers.com/m/neel0210.9821139/"><i class="fas fa-laptop-code" data-bs-hover-animate="pulse" style="color: rgb(255,255,255);font-size: 28px;background: #181818;border-radius: 11px;padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px;margin-right: 0px;" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></i></a>
-            </div>
-        </div>
-    </div><script>
-function bigImg(x) {
-  x.style.backgroundColor = "#ffffff";
-  x.style.color = "#181818";
-}
-
-function normalImg(x) {
-setTimeout(function()
-{x.style.backgroundColor = "#181818";
-x.style.color = "#ffffff"; }, 110);
-}   
-</script>
-<style>
-</style>
-    <script src="assets/js/jquery.min.js?h=89312d34339dcd686309fe284b3f226f"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js?h=03ab36d1dde930b7d44a712f19075641"></script>
-    <script src="assets/js/script.min.js?h=84a111365b31658389bfd638cc1392eb"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        document.getElementById("quote").style.textAlign = "justify";
+      } else {
+        document.getElementById("quote").style.textAlign = "center";
+      }
+    });
+  </script>
 </body>
-
 </html>
+
