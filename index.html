@@ -17,139 +17,13 @@
   <!-- FontAwesome CDN for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-  <style>
-    /* CSS Variables for light and dark glass */
-    :root {
-      --glass-bg-light: rgba(255, 255, 255, 0.15);
-      --glass-border-light: rgba(255, 255, 255, 0.3);
-      --glass-shadow-light: rgba(31, 38, 135, 0.1);
-      --text-color-light: #000;
-
-      --glass-bg-dark: rgba(32, 32, 32, 0.35);
-      --glass-border-dark: rgba(255, 255, 255, 0.1);
-      --glass-shadow-dark: rgba(0, 0, 0, 0.7);
-      --text-color-dark: #fff;
-    }
-
-    /* Base Reset and Fonts */
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000; /* dark background */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Glass container */
-    .glass {
-      background: var(--glass-bg-dark);
-      border: 1px solid var(--glass-border-dark);
-      box-shadow: 0 8px 32px 0 var(--glass-shadow-dark);
-      color: var(--text-color-dark);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem 3rem;
-      max-width: 520px;
-      width: 90%;
-      text-align: center;
-      transition: background 0.3s ease, color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* Light mode overrides */
-    @media (prefers-color-scheme: light) {
-      body {
-        background: #f0f0f0;
-      }
-      .glass {
-        background: var(--glass-bg-light);
-        border: 1px solid var(--glass-border-light);
-        box-shadow: 0 8px 32px 0 var(--glass-shadow-light);
-        color: var(--text-color-light);
-      }
-    }
-
-    /* Profile Image */
-    .glass img {
-      height: 230px;
-      width: 230px;
-      border-radius: 50%;
-      border: 20px solid #545454;
-      object-fit: cover;
-      margin-bottom: 2rem;
-    }
-
-    /* Headline */
-    .glass h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Quote styling */
-    .glass .lead {
-      font-size: 1.3rem;
-      margin-bottom: 0.25rem;
-      font-weight: 500;
-    }
-    .glass .quote-author {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      text-align: right;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    /* Button styling */
-    .btn-download {
-      background: rgba(24, 24, 24, 0.6);
-      border: none;
-      color: inherit;
-      border-radius: 7px;
-      padding: 10px 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 1.5rem;
-      user-select: none;
-    }
-    .btn-download:hover {
-      background-color: #fff;
-      color: #181818;
-    }
-
-    /* Icon links container */
-    .icon-links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    /* Icon styling */
-    .icon-links a {
-      background: rgba(24, 24, 24, 0.6);
-      border-radius: 11px;
-      padding: 12px;
-      font-size: 28px;
-      color: inherit;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      user-select: none;
-    }
-    .icon-links a:hover {
-      background-color: #fff;
-      color: #181818;
-    }
-
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" aria-label="Toggle dark/light mode"></button>
+
   <div class="glass">
     <img src="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5" alt="Profile Picture" />
     <h1>Neel0210</h1>
@@ -165,15 +39,8 @@
     </div>
   </div>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-        document.getElementById("quote").style.textAlign = "justify";
-      } else {
-        document.getElementById("quote").style.textAlign = "center";
-      }
-    });
-  </script>
+  <!-- External JS -->
+  <script src="script.js"></script>
 </body>
 </html>
 
