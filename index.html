@@ -3,44 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Neel0210 - Glass Effect Demo</title>
+  <title>Neel0210</title>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6M0VENYB0Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-6M0VENYB0Y');
-  </script>
-
-  <!-- FontAwesome CDN for icons -->
+  <!-- FontAwesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Theme toggle button -->
-  <button id="theme-toggle" aria-label="Toggle dark/light mode"></button>
 
-  <div class="glass">
-    <img src="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5" alt="Profile Picture" />
-    <h1>Neel0210</h1>
-    <p class="lead" id="quote">“It’s not whether you get knocked down, it’s whether you get up.”</p>
-    <p class="quote-author">- Vince Lombardi</p>
-    <a href="download.html" class="btn-download" role="button">DOWNLOADS</a>
-    <div class="icon-links" aria-label="Social media links">
-      <a href="https://github.com/neel0210" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-      <a href="https://t.me/Neel0210" aria-label="Telegram" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
-      <a href="https://www.instagram.com/neel_0210/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/neel_0210" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-      <a href="https://forum.xda-developers.com/m/neel0210.9821139/" aria-label="XDA Developers Forum" target="_blank" rel="noopener noreferrer"><i class="fas fa-laptop-code"></i></a>
+  <!-- Adaptive device frame -->
+  <div class="device-frame">
+    <!-- Notch & speaker -->
+    <div class="notch"></div>
+    <div class="speaker"></div>
+
+    <!-- Side buttons (iPhone only) -->
+    <div class="side-button volume-up"></div>
+    <div class="side-button volume-down"></div>
+    <div class="side-button power"></div>
+
+    <!-- Glass content -->
+    <div class="glass">
+      <div class="memoji-container">
+        <video autoplay muted loop playsinline poster="assets/memoji-placeholder.jpg">
+          <source src="assets/Memoji.mp4" type="video/mp4" />
+          <img src="assets/memoji-placeholder.jpg" alt="Memoji" />
+        </video>
+      </div>
+      <h1>Neel0210</h1>
+      <p class="lead" id="quote">“It’s not whether you get knocked down, it’s whether you get up.”</p>
+      <p class="quote-author">— Vince Lombardi</p>
+      <a href="#" class="btn-download" role="button">DOWNLOADS</a>
+    </div>
+
+    <!-- Dock -->
+    <div class="dock">
+      <div class="icon-links">
+        <a href="https://github.com/neel0210" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+          <span class="icon-label">GitHub</span>
+        </a>
+        <a href="https://t.me/Neel0210" target="_blank" aria-label="Telegram">
+          <i class="fab fa-telegram"></i>
+          <span class="icon-label">Telegram</span>
+        </a>
+        <a href="https://twitter.com/neel_0210" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+          <span class="icon-label">Twitter</span>
+        </a>
+        <a href="https://forum.xda-developers.com/m/neel0210.9821139/" target="_blank" aria-label="XDA">
+          <i class="fas fa-laptop-code"></i>
+          <span class="icon-label">XDA</span>
+        </a>
+        <a href="#" class="btn-download" aria-label="Downloads">
+          <i class="fas fa-download"></i>
+          <span class="icon-label">Downloads</span>
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- External JS -->
+  <!-- Downloads Popup -->
+  <div id="download-popup" class="popup-overlay">
+    <div class="popup">
+      <h2>Downloads</h2>
+      <div class="popup-buttons">
+        <a class="popup-btn" href="EXYNOS.html">Exynos</a>
+        <a class="popup-btn" href="SD.html">SD</a>
+        <a class="popup-btn" href="MTK.html">MTK</a>
+      </div>
+      <button id="close-popup" class="popup-close">Close</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-

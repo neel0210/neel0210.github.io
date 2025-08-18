@@ -1,62 +1,80 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6M0VENYB0Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MTK Devices</title>
 
-  gtag('config', 'G-6M0VENYB0Y');
-</script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Neel0210</title>
-    <link rel="icon" type="image/jpeg" sizes="640x640" href="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=815797bb9644aa219c4798c1e4c217a8">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css?h=9db842b3dc3336737559eb4abc0f1b3d">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css?h=9db842b3dc3336737559eb4abc0f1b3d">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css?h=9db842b3dc3336737559eb4abc0f1b3d">
-    <link rel="stylesheet" href="assets/css/styles.min.css?h=5bdcb9f0b3025948d04edc16838b30cb">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
 
-<body style="background: rgb(0,0,0);">
-    <div class="row" style="height: 100%;width: 100%;margin-top: 8%;margin-right: 0px;margin-left: 0px;margin-bottom: 5%;">
-        <div class="col text-center" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle img-fluid" src="assets/img/logo.jpg?h=06f0acb69d9f2ca33be96fcc9c410ca5" style="height: 230px;border: 20px solid #545454 ;"><script>
-window.addEventListener('DOMContentLoaded', (event) => {
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-document.getElementById("quote").style.textAlign = "justify";
-}else{
-document.getElementById("quote").style.textAlign = "center";
-}});
-</script>
-            <h1 style="margin-top: 50px;color: #ffffff;font-family: Conv_std;font-size: 35px;">Neel0210<br></h1>
-            <div style="margin-right: 10%;margin-left: 10%;">
-                <p class="lead text-center" id="quote" style="color: #ffffff;font-family: Conv_std-book;font-size: 22px;">I don't support nuclear things xD!<br></p>
-                <p class="text-right" style="color: #ffffff;font-family: Conv_std-book;font-size: 22px;text-align-last: right;">-Neel0210<br></p>
-                <div style="margin-bottom: 21px;">
-					<!-- Start: delclass_button --><a class="btn text-capitalize shadow-none" role="button" style="color: #ffffff;background: #181818;border-color: #000000;border-radius: 7px;font-family: Conv_std-book;padding-top: 7px;padding-bottom: 7px;padding-right: 3%;padding-left: 3%;margin-bottom: 5px;" href="download.html" onmouseover="bigImg(this)" onmouseout="normalImg(this)">Go Back</a><!-- End: delclass_button -->
-            </div>
-        </div>
-		<footer id="footer">
-			&copy; 2021 Neel0210
-		</footer>
-    </div><script>
-	
-function bigImg(x) {
-  x.style.backgroundColor = "#ffffff";
-  x.style.color = "#181818";
-}
+  <!-- Back button -->
+  <button id="back-btn" class="popup-btn" style="position:absolute; top:20px; left:20px; z-index:30;">Back</button>
+  
+  <div class="glass">
+    <h1>MTK Devices</h1>
 
-function normalImg(x) {
-setTimeout(function()
-{x.style.backgroundColor = "#181818";
-x.style.color = "#ffffff"; }, 110);
-}   
+    <!-- Device Cards Grid -->
+    <div class="device-grid">
+      <!-- Galaxy A22 5G -->
+      <div class="device-card" id="a22-card">
+        <img src="assets/a226b.png" alt="Galaxy A22 5G" />
+        <span>Galaxy A22 5G</span>
+      </div>
 
+      <!-- Galaxy A24 -->
+      <div class="device-card" id="a24-card">
+        <img src="assets/a24.png" alt="Galaxy A24" />
+        <span>Galaxy A24</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popups -->
+  <div id="a22-popup" class="popup-overlay">
+    <div class="popup">
+      <h2>Galaxy A22 5G</h2>
+      <div class="popup-buttons">
+        <a class="popup-btn" href="https://github.com/SMA226B/Releases/releases/tag/twrp_beta1" target="_blank">Recoveries</a>
+        <a class="popup-btn" href="https://github.com/SMA226B/android_kernel_device_samsung_a22x/releases" target="_blank">Kernels</a>
+        <a class="popup-btn" href="#">ROMs</a>
+        <a class="popup-btn" href="#">Vendors</a>
+        <a class="popup-btn" href="#" id="patches-btn">Patches</a>
+        <a class="popup-btn" href="#">Extras</a>
+        <button class="popup-btn exit-btn">Exit</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="patches-popup" class="popup-overlay">
+    <div class="popup">
+      <h2>Galaxy A22 5G - Patches</h2>
+      <div class="popup-buttons">
+        <a class="popup-btn" href="#">Coming Soon</a>
+        <a class="popup-btn" href="#">Coming Soon</a>
+        <button class="popup-btn exit-btn">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="a24-popup" class="popup-overlay">
+    <div class="popup">
+      <h2>Galaxy A24</h2>
+      <div class="popup-buttons">
+        <a class="popup-btn" href="#">Recoveries</a>
+        <a class="popup-btn" href="#">Kernels</a>
+        <a class="popup-btn" href="#">ROMs</a>
+        <a class="popup-btn" href="#">Vendors</a>
+        <a class="popup-btn" href="#">Extras</a>
+        <button class="popup-btn exit-btn">Exit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
