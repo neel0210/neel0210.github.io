@@ -8,8 +8,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  overflow: hidden;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* ======================= */
@@ -17,7 +18,7 @@ body {
 .device-frame {
   width: 90vw;
   max-width: 1280px;
-  height: 95vh;
+  height: 100dvh;
   border-radius: 3%;
   background: #000;
   box-shadow: 0 0 40px rgba(0,0,0,0.9);
@@ -61,7 +62,7 @@ body {
 /* Glass Content */
 .glass {
   flex: 1;
-  padding: 70px 20px 100px; /* Adjusted bottom for dock */
+  padding: 70px 20px 100px;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   background: rgba(255,255,255,0.05);
@@ -185,7 +186,8 @@ h1 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   text-align: center;
-  width: 320px;
+  width: 90%;
+  max-width: 320px;
 }
 .popup h2 { color: white; margin-bottom: 20px; }
 .popup-buttons { display: flex; flex-direction: column; gap: 12px; }
@@ -211,24 +213,6 @@ h1 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
 .popup-close:hover { background: rgba(255,255,255,0.25); }
 
 /* ======================= */
-/* iPad & Mac Adjustments */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .device-frame { width: 90%; height: 90vh; border-radius: 40px; }
-  .notch { width: 120px; height: 28px; border-radius: 14px; }
-  .speaker, .side-button { display: none; }
-  .dock { bottom: 20px; padding: 16px 30px; border-radius: 28px; }
-  .icon-links a { width: 72px; height: 72px; font-size: 30px; }
-}
-
-@media (min-width: 1025px) {
-  .device-frame { width: 90%; height: 90vh; border-radius: 12px; }
-  .notch { width: 180px; height: 30px; border-radius: 0 0 12px 12px; }
-  .speaker, .side-button { display: none; }
-  .dock { bottom: 20px; padding: 18px 32px; border-radius: 30px; }
-  .icon-links a { width: 75px; height: 75px; font-size: 32px; }
-}
-
-/* ======================= */
 /* Back Button */
 #back-btn {
   position: absolute;
@@ -240,3 +224,59 @@ h1 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
   border-radius: 12px;
   z-index: 50;
 }
+
+/* ======================= */
+/* Tablet (iPad) Adjustments */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .device-frame { width: 90%; height: 90vh; border-radius: 40px; }
+  .notch { width: 120px; height: 28px; border-radius: 14px; }
+  .speaker, .side-button { display: none; }
+  .dock { bottom: 20px; padding: 16px 30px; border-radius: 28px; }
+  .icon-links a { width: 72px; height: 72px; font-size: 30px; }
+}
+
+/* ======================= */
+/* Desktop Adjustments */
+@media (min-width: 1025px) {
+  .device-frame { width: 90%; height: 90vh; border-radius: 12px; }
+  .notch { width: 180px; height: 30px; border-radius: 0 0 12px 12px; }
+  .speaker, .side-button { display: none; }
+  .dock { bottom: 20px; padding: 18px 32px; border-radius: 30px; }
+  .icon-links a { width: 75px; height: 75px; font-size: 32px; }
+}
+
+/* ======================= */
+/* Mobile Adjustments (iOS dock left→right row, smaller icons) */
+@media (max-width: 480px) {
+  .memoji-container {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 18px;
+  }
+  h1 { font-size: 1.5rem; }
+  .lead { font-size: 0.9rem; }
+
+  .dock {
+    padding: 10px 16px; /* more breathing room */
+    border-radius: 22px;
+    width: 90%;
+  }
+
+  .icon-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .icon-links a {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .icon-label { font-size: 0.6rem; }
+  }
