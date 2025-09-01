@@ -8,35 +8,36 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="glass">
-    <h1>SD Devices</h1>
+  <div class="device-frame">
+    <div class="notch"></div>
+    <div class="speaker"></div>
 
-    <!-- Device Grid -->
-    <div class="device-grid">
-      <div class="device-card" id="realme6pro-card">
-        <img src="assets/realme6pro.png" alt="Realme 6 Pro" />
-        <span>Realme 6 Pro</span>
-      </div>
-      <div class="device-card" id="a52-card">
-        <img src="assets/a52.png" alt="Galaxy A52" />
-        <span>Galaxy A52</span>
-      </div>
-      <div class="device-card" id="a72-card">
-        <img src="assets/a72.png" alt="Galaxy A72" />
-        <span>Galaxy A72</span>
-      </div>
-      <div class="device-card" id="s22-card">
-        <img src="assets/s22.png" alt="Galaxy S22 Ultra" />
-        <span>Galaxy S22 Ultra</span>
+    <div class="glass">
+      <button id="back-btn">Back</button>
+      <h1>Snapdragon Devices</h1>
+
+      <div class="device-grid">
+        <div class="device-card" id="realme6pro-card">
+          <img src="assets/realme6pro.png" alt="Realme 6 Pro" />
+          <span>Realme 6 Pro</span>
+        </div>
+        <div class="device-card" id="a52-card">
+          <img src="assets/a52.png" alt="Galaxy A52" />
+          <span>Galaxy A52</span>
+        </div>
+        <div class="device-card" id="a72-card">
+          <img src="assets/a72.png" alt="Galaxy A72" />
+          <span>Galaxy A72</span>
+        </div>
+        <div class="device-card" id="s22-card">
+          <img src="assets/s22.png" alt="Galaxy S22 Ultra" />
+          <span>Galaxy S22 Ultra</span>
+        </div>
       </div>
     </div>
-
-    <a class="popup-btn" id="back-btn">Go Back</a>
   </div>
 
   <!-- Popups -->
-
-  <!-- Realme 6 Pro -->
   <div id="realme6pro-popup" class="popup-overlay">
     <div class="popup">
       <h2>Realme 6 Pro</h2>
@@ -50,7 +51,6 @@
     </div>
   </div>
 
-  <!-- Galaxy A52 -->
   <div id="a52-popup" class="popup-overlay">
     <div class="popup">
       <h2>Galaxy A52</h2>
@@ -62,7 +62,6 @@
     </div>
   </div>
 
-  <!-- Galaxy A72 -->
   <div id="a72-popup" class="popup-overlay">
     <div class="popup">
       <h2>Galaxy A72</h2>
@@ -74,13 +73,12 @@
     </div>
   </div>
 
-  <!-- Galaxy S22 Ultra -->
   <div id="s22-popup" class="popup-overlay">
     <div class="popup">
       <h2>Galaxy S22 Ultra</h2>
       <div class="popup-buttons">
         <a class="popup-btn" href="#">Stock ROM</a>
-        <a class="popup-btn" href="#">Moded ROM</a>
+        <a class="popup-btn" href="#">Modded ROM</a>
         <a class="popup-btn" href="#">Kernel</a>
         <button class="popup-btn exit-btn">Exit</button>
       </div>

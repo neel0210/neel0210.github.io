@@ -4,32 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MTK Devices</title>
-
-  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <!-- Common CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="device-frame">
+    <div class="notch"></div>
+    <div class="speaker"></div>
 
-  <!-- Back button -->
-  <button id="back-btn" class="popup-btn" style="position:absolute; top:20px; left:20px; z-index:30;">Back</button>
-  
-  <div class="glass">
-    <h1>MTK Devices</h1>
+    <div class="glass">
+      <button id="back-btn">Back</button>
+      <h1>MTK Devices</h1>
 
-    <!-- Device Cards Grid -->
-    <div class="device-grid">
-      <!-- Galaxy A22 5G -->
-      <div class="device-card" id="a22-card">
-        <img src="assets/a226b.png" alt="Galaxy A22 5G" />
-        <span>Galaxy A22 5G</span>
-      </div>
-
-      <!-- Galaxy A24 -->
-      <div class="device-card" id="a24-card">
-        <img src="assets/a24.png" alt="Galaxy A24" />
-        <span>Galaxy A24</span>
+      <div class="device-grid">
+        <div class="device-card" id="a22-card">
+          <img src="assets/a226b.png" alt="Galaxy A22 5G" />
+          <span>Galaxy A22 5G</span>
+        </div>
+        <div class="device-card" id="a24-card">
+          <img src="assets/a24.png" alt="Galaxy A24" />
+          <span>Galaxy A24</span>
+        </div>
       </div>
     </div>
   </div>

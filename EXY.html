@@ -9,31 +9,41 @@
 </head>
 <body>
 
-  <!-- Glass container -->
-  <div class="glass">
-    <h1>Exynos Devices</h1>
+  <!-- Device Frame -->
+  <div class="device-frame">
+    <div class="notch"></div>
+    <div class="speaker"></div>
 
-    <!-- Device Cards -->
-    <div class="device-grid">
-      <div class="device-card" id="exy7870-card">
-        <img src="assets/7870.png" alt="Exynos 7870" />
-        <span>Exynos 7870</span>
-      </div>
-      <div class="device-card" id="m30s-card">
-        <img src="assets/m30s.png" alt="Galaxy M30s" />
-        <span>Galaxy M30s</span>
-      </div>
-      <div class="device-card" id="a50-card">
-        <img src="assets/a50.png" alt="Galaxy A50" />
-        <span>Galaxy A50</span>
+    <div class="glass">
+      <button id="back-btn">Back</button>
+      <h1>Exynos Devices</h1>
+
+      <!-- Device Grid -->
+      <div class="device-grid">
+        <!-- Exynos 7870 -->
+        <div class="device-card" id="exy7870-card">
+          <img src="assets/exy7870.png" alt="Exynos 7870" />
+          <span>Exynos 7870</span>
+        </div>
+
+        <!-- Galaxy M30s -->
+        <div class="device-card" id="m30s-card">
+          <img src="assets/m30s.png" alt="Galaxy M30s" />
+          <span>Galaxy M30s</span>
+        </div>
+
+        <!-- Galaxy A50 -->
+        <div class="device-card" id="a50-card">
+          <img src="assets/a50.png" alt="Galaxy A50" />
+          <span>Galaxy A50</span>
+        </div>
       </div>
     </div>
-
-    <!-- Back button -->
-    <button id="back-btn" class="popup-btn" style="margin-top:20px;">Go Back</button>
   </div>
 
   <!-- Popups -->
+
+  <!-- Exynos 7870 Popup -->
   <div id="exy7870-popup" class="popup-overlay">
     <div class="popup">
       <h2>Exynos 7870</h2>
@@ -41,13 +51,12 @@
         <a class="popup-btn" href="#">Recoveries</a>
         <a class="popup-btn" href="#">Kernels</a>
         <a class="popup-btn" href="#">ROMs</a>
-        <a class="popup-btn" href="#">Vendors</a>
-        <a class="popup-btn" href="#">Extras</a>
         <button class="popup-btn exit-btn">Exit</button>
       </div>
     </div>
   </div>
 
+  <!-- Galaxy M30s Popup -->
   <div id="m30s-popup" class="popup-overlay">
     <div class="popup">
       <h2>Galaxy M30s</h2>
@@ -55,13 +64,12 @@
         <a class="popup-btn" href="#">Recoveries</a>
         <a class="popup-btn" href="#">Kernels</a>
         <a class="popup-btn" href="#">ROMs</a>
-        <a class="popup-btn" href="#">Vendors</a>
-        <a class="popup-btn" href="#">Extras</a>
         <button class="popup-btn exit-btn">Exit</button>
       </div>
     </div>
   </div>
 
+  <!-- Galaxy A50 Popup -->
   <div id="a50-popup" class="popup-overlay">
     <div class="popup">
       <h2>Galaxy A50</h2>
@@ -69,8 +77,6 @@
         <a class="popup-btn" href="#">Recoveries</a>
         <a class="popup-btn" href="#">Kernels</a>
         <a class="popup-btn" href="#">ROMs</a>
-        <a class="popup-btn" href="#">Vendors</a>
-        <a class="popup-btn" href="#">Extras</a>
         <button class="popup-btn exit-btn">Exit</button>
       </div>
     </div>
